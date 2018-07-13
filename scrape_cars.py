@@ -25,7 +25,7 @@ with open('carsDealers.csv', 'a') as my_file:
 				cardealers = str(div.findAll("script")[3])    # From the script tag, select 3rd tag for our use case
 				j = json.loads(cardealers[50:-83])     # Substring so that it can be converted into json
 				for each in j['dealerSummaryList']:    # Traverse through only 1 required key
-					my_file.write(each['name'].replace(',',' ') + ',' + each['addressLine1'].replace(',',' ') + ',' + str(each['addressLine2']).replace(',',' ') + ',' + each['city'].replace(',',' ') + ',' + each['state'].replace(',',' ') + ',' + each['zip'] + ',' + each['latitude'] + ',' + each['longitude'] + '\n')
+					my_file.write(each['name'].replace(',',' ') + ',' + each['addressLine1'].replace(',',' ') + ',' + str(each['addressLine2']).replace(',',' ') + ',' + each['city'].replace(',',' ') + ',' + each['state'].replace(',',' ') + ',' + each['zip'] + ',' + each['latitude'] + ',' + each['longitude'] + '\n')   #Convert it into csv format 
 			print ("Success Request Code " + str(page.status_code))
 			#my_file.write("\n AppenderNewContentForNextPage " + str(x+1) + page.text)
 			del soup
